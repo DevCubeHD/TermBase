@@ -1,0 +1,57 @@
+{
+    "name": "TermBase",
+    "version": "0.0.1",
+    "description": "Electron based server administration tool including performance, SSH, SFTP and FTP protocols",
+    "author": "FelixG <felix@cloudsystem.io>",
+    "contributors": [
+        "MauriceK <maurice@cloudsystem.io>"
+    ],
+    "homepage": "http://termbase.github.io/",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DevCubeHD/TermBase.git"
+    },
+    "bugs": {
+        "url": "https://github.com/DevCubeHD/TermBase/issues"
+    },
+    "keywords": [
+        "server",
+        "terminal",
+        "administration",
+        "tool",
+        "ssh",
+        "sftp",
+        "ftp"
+    ],
+    "license": "MIT",
+    "main": "app.js",
+    "scripts": {
+        "prod": "webpack --config webpack.build.config.js && electron --noDevServer .",
+        "dev": "webpack-dev-server --hot --host 0.0.0.0 --config=./webpack.dev.config.js",
+        "dist": "webpack --config webpack.build.config.js",
+        "build": "webpack --config webpack.build.config.js"
+    },
+    "devDependencies": {
+        "babel-core": "^6.24.1",
+        "babel-loader": "^7.1.2",
+        "babel-preset-react": "^6.24.1",
+        "babili-webpack-plugin": "^0.1.2",
+        "concurrently": "^3.5.1",
+        "css-loader": "^0.28.1",
+        "electron-packager": "^9.1.0",
+        "file-loader": "^1.1.5",
+        "less": "^3.0.4",
+        "less-loader": "^4.1.0",
+        "mini-css-extract-plugin": "^0.4.0",
+        "react": "^16.0.0",
+        "react-dom": "^16.0.0",
+        "react-hot-loader": "^4.1.3",
+        "style-loader": "^0.19.0",
+        "webpack": "^4.12.0",
+        "webpack-cli": "^3.0.3",
+        "webpack-dev-server": "^3.1.4"
+    },
+    "dependencies": {
+        "electron": "^2.0.2"
+    }
+}
