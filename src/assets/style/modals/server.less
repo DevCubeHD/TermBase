@@ -1,0 +1,161 @@
+& > .server {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50vw;
+    max-height: 65vh;
+    overflow-y: auto;
+    background-color: @background;
+    border-radius: 5px;
+    padding: 0 25px;
+
+    & > h2 {
+        color: @text;
+        margin: 25px 0 10px;
+    }
+
+    div {
+
+        display: inline-block;
+        margin-right: 20px;
+
+        &.radio {
+
+            position: relative;
+            margin-right: 0;
+            margin: 25px 0 10px -10px;
+
+            & > input, & > label {
+                height: 25px;
+                width: 80px;
+                margin: 0;
+            }
+
+            & > input {
+                z-index: 30;
+                position: absolute;
+                top: 2px;
+                opacity: 0;
+                cursor: pointer;
+            }
+
+            & > label {
+                z-index: 0;
+                font-size: 1.5em;
+                text-align: center;
+            }
+
+            & > input:checked + label {
+                font-weight: 800;
+                color: @text-active;
+            }
+
+        }
+
+    }
+
+    & > section {
+
+        background-color: @surface;
+        border: 1px solid @surface-border;
+        padding: 0 20px 15px 20px;
+        border-radius: 5px;
+        position: relative;
+
+        & > div {
+
+            &.overlay {
+                display: none;
+            }
+
+            &.disabled {
+
+                display: block;
+                background-color: @surface;
+                opacity: 0.5;
+                width: 100%;
+                height: 100%;
+                line-height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 20;
+
+                & > p {
+                    text-align: center;
+                    color: @text-active;
+                    font-size: 24px;
+                    position: relative;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+
+            }
+
+            & > input {
+                background-color: @background;
+            }
+
+        }
+
+
+        & > .enabled, & > .disabled {
+            margin-bottom: 75px;
+        }
+
+        &.protocol {
+
+            & > div {
+
+                & > label {
+                    display: inline-block;
+                }
+
+            }
+
+        }
+
+        &.disabled > div:not(.disabled) {
+            filter: blur(2px);
+        }
+
+    }
+
+    & > .buttons {
+
+        width: 100%;
+        margin: 20px 0;
+
+        & > button {
+
+            width: 80px;
+            background-color: @surface;
+            border: 1px solid @surface-border;
+            color: @text-active;
+            font-weight: bold;
+            transition: background-color .3s;
+            float: right;
+            margin-left: 20px;
+
+            &:hover {
+                background-color: @red;
+                border: 0;
+            }
+
+            &[type='submit'] {
+
+                right: 120px;
+
+                &:hover {
+                    background-color: @green;
+                }
+
+            }
+
+        }
+
+    }
+
+}

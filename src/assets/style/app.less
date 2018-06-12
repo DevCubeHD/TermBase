@@ -26,6 +26,8 @@ html, body {
         @import 'modal';
     }
 
+    @import 'vendor/react-select/default.less';
+
 }
 
 div, span, form, label {
@@ -52,6 +54,10 @@ button, input {
     padding: 0 10px;
 }
 
+button {
+    cursor: pointer;
+}
+
 input {
 
     background-color: @surface;
@@ -63,10 +69,33 @@ input {
         color: @text;
     }
 
+    &[type='number']::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
 }
 
 label {
     margin-top: 10px;
     color: @text;
     font-size: 14px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: @surface;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: @darker;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: @darker-border;
 }

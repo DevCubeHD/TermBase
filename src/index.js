@@ -8,8 +8,9 @@ export default class App extends React.Component {
 
     constructor(props) {
         super(props)
-        this.state = {servermodal: false}
+        this.state = {showServerModal: false}
         this.openServerModal = this.openServerModal.bind(this)
+        this.closeServerModal = this.closeServerModal.bind(this)
     }
 
     minimize() {
@@ -25,16 +26,19 @@ export default class App extends React.Component {
     }
 
     openServerModal() {
-        this.setState({servermodal: true})
+        this.setState({showServerModal: true})
+    }
+
+    closeServerModal(e) {
+        e.preventDefault()
+        this.setState({showServerModal: false})
     }
 
     render() {
 
-        const {servermodal} = this.state
-
         return (
             <div>
-                <ServerModal show={servermodal} />
+                <ServerModal show={this.state.showServerModal} close={this.closeServerModal} />
                 <div className='sidebar'>
                     <span className='logo'>
                         <i className='fas fa-terminal'></i>
